@@ -27,7 +27,7 @@ app.get(`/fruits/:fruitName`, (req, res) => {
     const fruitName = req.params.fruitName.toLowerCase();
 
     const fruit = fruits.find((fruit) => fruit.name.toLowerCase() == fruitName);
-    
+
     if (fruit == undefined) {
         res.status(404).send();
     } else {
@@ -39,7 +39,7 @@ app.get(`/fruits/:fruitName`, (req, res) => {
 app.post("/fruits", (req, res) => {
 
     //check that the fruit doesn't exist in the data
-    const fruit = fruits.find((fruit) => fruit.name === req.body.name);
+    const fruit = fruits.find((fruit) => fruit.name.toLowerCase() === req.body.name.toLowerCase());
 
     if(fruit != undefined){
         res.status(409).send();
