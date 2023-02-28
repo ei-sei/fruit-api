@@ -27,6 +27,7 @@ app.get(`/fruits/:fruitName`, (req, res) => {
     const fruitName = req.params.fruitName.toLowerCase();
 
     const fruit = fruits.find((fruit) => fruit.name.toLowerCase() == fruitName);
+    
     if (fruit == undefined) {
         res.status(404).send();
     } else {
