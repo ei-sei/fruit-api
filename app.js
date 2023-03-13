@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 //home route
-app.get('/', async (req, res next) => {
+app.get('/', async (req, res, next) => {
     res.send('hello, fruity API');
 
 });
